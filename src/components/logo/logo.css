@@ -1,0 +1,11 @@
+.logo-contenedor {
+  width: 100%;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  width: 400%;
+  max-width: 50px;
+}
