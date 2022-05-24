@@ -1,7 +1,7 @@
 import './App.css'
 import Logo from './components/Logo/Logo'
-import Tarea from './components/Tarea/Tarea'
-import TareaFormulario from './components/TareaFormulario/TareaFormulario'
+import ListaDeTareas from './components/ListaDeTareas/ListaDeTareas'
+
 //TODO: 6:07
 function App() {
   return (
@@ -9,8 +9,7 @@ function App() {
       <Logo />
       <div className='tareas-lista-principal'>
         <h1>Tareas</h1>
-        <Tarea texto='Aprender React' isCompletada={true} />
-        <TareaFormulario />
+        <ListaDeTareas />
       </div>
     </div>
   )
