@@ -1,16 +1,29 @@
-import React from 'react';
-import TareaFormulario from '../TareaFormulario/TareaFormulario';
-import './ListaDeTareas.css';
+import React, { useState } from 'react'
+import TareaFormulario from '../TareaFormulario/TareaFormulario'
+import Tarea from '../Tarea/Tarea'
+import './ListaDeTareas.css'
 
 function ListaDeTareas() {
+  const [tareas, setTareas] = useState([])
+  const agregarTarea = (tarea) => {
+    setTareas([...tareas, tarea])
+  }
+
   return (
     <>
-      <TareaFormulario />
+      <TareaFormulario agregarTarea={agregarTarea} />
       <div className='tareas-lista-contenedor'>
-        LISTA DE TAREAS
+        {tareas.map((tarea) => (
+          <Tarea
+            key={tarea.id}
+            id={tarea.id}
+            texto={tarea.texto}
+            isCompletada={tarea.isCompletada}
+          />
+        ))}
       </div>
     </>
   )
 }
 
-export default ListaDeTareas;
+export default ListaDeTareas
