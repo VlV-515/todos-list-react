@@ -8,6 +8,20 @@ function ListaDeTareas() {
   const agregarTarea = (tarea) => {
     setTareas([...tareas, tarea])
   }
+  const completarTarea = (id) => {
+    const arr = tareas.map((tarea) => {
+      if (tarea.id === id) {
+        tarea.isCompletada = !tarea.isCompletada
+      }
+      return tarea
+    })
+    setTareas(arr)
+  }
+
+  const eliminarTarea = (id) => {
+    const arr = tareas.filter((tarea) => tarea.id !== id)
+    setTareas(arr)
+  }
 
   return (
     <>
@@ -19,6 +33,8 @@ function ListaDeTareas() {
             id={tarea.id}
             texto={tarea.texto}
             isCompletada={tarea.isCompletada}
+            completarTarea={completarTarea}
+            eliminarTarea={eliminarTarea}
           />
         ))}
       </div>
